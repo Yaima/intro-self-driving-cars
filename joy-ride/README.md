@@ -1,9 +1,9 @@
-#Joy Ride - Part 3: Parallel Parking
+# Joy Ride - Part 3: Parallel Parking
 
 In this section you will write a function that implements the correct sequence of steps required to parallel park a vehicle.
 Note for this segment the vehicle's maximum speed has been set to just over 4 mph. This should make parking a little easier.
 
-##Submitting this Project!
+## Submitting this Project!
 
 Your parallel park function is *"correct"* when:
 Your car doesn't hit any other cars.
