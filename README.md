@@ -36,7 +36,7 @@ Explore how to write good code that runs correctly. We’ll focus primarily on l
 
 ## PART 6
 
-###Navigating Data Structures
+### Navigating Data Structures
 
 Algorithmic thinking is a skill you’ll refine throughout your career. In this course you’ll focus on frequently used data structures and algorithms.
 Project: Implement Route Planner
