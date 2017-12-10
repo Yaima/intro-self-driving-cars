@@ -1,4 +1,5 @@
-#Two Dimensional Histogram Filter - Your First Feature (and your first bug).
+#Two Dimensional Histogram Filter - Your First Feature (and your first bug). 
+
 Writing code is important. But a big part of being on a self driving car team is working with a large existing codebase. On high stakes engineering projects like a self driving car, you will probably have to earn the trust of your managers and coworkers before they'll let you make substantial changes to the code base.
 
 A typical assignment for someone new to a team is to make progress on a backlog of bugs. So with that in mind, that's what you will be doing for your first project in the Nanodegree.
