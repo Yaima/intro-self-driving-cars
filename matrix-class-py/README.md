@@ -1,6 +1,4 @@
-# Kalman Filter and your Matrix Class
-
-Once you have a working matrix class, you can use the class to run a Kalman filter!
+# Kalman Filter and the Matrix Class
 
 ## Kalman Filters - Why are they useful?
 
