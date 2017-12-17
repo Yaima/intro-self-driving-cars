@@ -137,7 +137,6 @@ vector<vector<float> > blur(vector<vector<float> > grid, float blurring) {
             for (auto dx : range) {
                 for (auto dy : range) {
                     new_i = (i + dy + height) % height;
-                    cout << i + dy + height;
                     new_j = (j + dx + width) % width;
                     mult = window[dx + 1][dy + 1];
                     newGrid[new_i][new_j] += mult * grid_val;
