@@ -3,33 +3,33 @@ from queue import PriorityQueue
 
 
 def shortest_path(M, start, goal):
-    queue = PriorityQueue()
-    queue.put(start, 0)
-    visited = {start: None}
+    frontier = PriorityQueue()
+    frontier.put(start, 0)
+    explored = {start: None}
     gscore = {start: 0}
 
-    while not queue.empty():
-        current = queue.get()
+    while not frontier.empty():
+        current = frontier.get()
 
         if current == goal:
-            reconstruct_path(visited, start, goal)
+            reconstruct_path(explored, start, goal)
 
         for next in M.roads[current]:
-            fscore = gscore[current] + heuristic(M, current, next)
-            if next not in gscore or fscore < gscore[next]:
-                gscore[next] = fscore
-                priority = fscore + heuristic(M, goal, next)
-                queue.put(next, priority)
-                visited[next] = current
+            tentative_gscore = gscore[current] + heuristic(M, current, next)
+            if next not in gscore or tentative_gscore < gscore[next]:
+                gscore[next] = tentative_gscore
+                fscore = tentative_gscore + heuristic(M, goal, next)
+                frontier.put(next, fscore)
+                explored[next] = current
 
-    return reconstruct_path(visited, start, goal)
+    return reconstruct_path(explored, start, goal)
 
 
-def reconstruct_path(visited, start, goal):
+def reconstruct_path(explored, start, goal):
     current = goal
     path = [current]
     while current != start:
-        current = visited[current]
+        current = explored[current]
         path.append(current)
     path.reverse()
     return path
@@ -38,4 +38,4 @@ def reconstruct_path(visited, start, goal):
 def heuristic(M, n1, n2):
     a = M.intersections[n1]
     b = M.intersections[n2]
-    return abs(b[0] - a[0]) + abs(b[1] - a[1])
+    return math.sqrt((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2)
